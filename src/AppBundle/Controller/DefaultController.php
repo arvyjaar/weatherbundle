@@ -24,7 +24,7 @@ class DefaultController extends Controller
      * @return \Symfony\Component\HttpFoundation\Response
      */
     public function temperatureAction() {
-        $weather = $this->container->get('app.delegating_weather');
+        $weather = $this->container->get('app.provider');
 
         $temperature =$weather->fetch('Aleppo');
 

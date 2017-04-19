@@ -1,0 +1,15 @@
+services:
+  #nfq_weather.provider.yahoo:
+  #  class: Nfq\Bundle\WeatherBundle\YahooWeatherProvider
+  #  arguments: ['']
+
+  app.provider.owm:
+    class: AppBundle\Providers\OpenWeatherProvider
+    arguments: ['']
+  app.provider.apixu:
+      class: AppBundle\Providers\ApixuWeatherProvider
+      arguments: ['']
+
+  app.provider.delegating:
+          class: AppBundle\Providers\DelegatingWeatherProvider
+          arguments: ['', '']

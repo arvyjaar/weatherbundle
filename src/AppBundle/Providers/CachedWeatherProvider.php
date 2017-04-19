@@ -12,7 +12,7 @@ class CachedWeatherProvider implements WeatherProviderInterface
     private $lifetime;
     private $weatherProvider;
 
-    public function __construct($lifetime, $weatherProvider)
+    public function __construct($lifetime = 10, $weatherProvider)
     {
         $this->lifetime = $lifetime;
         $this->weatherProvider = $weatherProvider;

@@ -70,3 +70,17 @@ swiftmailer:
     spool: { type: memory }
 
 # Weather configuration
+app:
+    provider: delegating
+    providers:
+        apixu:
+            key: '%apixu_apikey%'
+        owm:
+            key: '%owm_apikey%'
+        delegating:
+            providers:
+                - apixu
+                - owm
+        cached:
+            provider: owm
+            lifetime: 15

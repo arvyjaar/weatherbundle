@@ -8,19 +8,19 @@ services:
     #    class: AppBundle\Directory\ClassName
     #    arguments: ['@another_service_name', 'plain_value', '%parameter_name%']
 
-    app.open_weather:
-        class: AppBundle\Providers\OpenWeatherProvider
-        arguments: ['%owm_apikey%']
-    app.apixu_weather:
-        class: AppBundle\Providers\ApixuWeatherProvider
-        arguments: ['%apixu_apikey%']
-    app.delegating_weather:
-        class: AppBundle\Providers\DelegatingWeatherProvider
-        arguments:
-            - '@app.open_weather'
-            - '@app.apixu_weather'
-    app.cached_weather:
-        class: AppBundle\Providers\CachedWeatherProvider
-        arguments:
-            - '%lifetime%'
-            - '@app.open_weather'
+#    app.open_weather:
+#        class: AppBundle\Providers\OpenWeatherProvider
+#        arguments: ['%owm_apikey%']
+#    app.apixu_weather:
+#        class: AppBundle\Providers\ApixuWeatherProvider
+#        arguments: ['%apixu_apikey%']
+#    app.delegating_weather:
+#        class: AppBundle\Providers\DelegatingWeatherProvider
+#        arguments:
+#            - '@app.open_weather'
+#            - '@app.apixu_weather'
+#    app.cached_weather:
+#        class: AppBundle\Providers\CachedWeatherProvider
+#        arguments:
+#            - '%lifetime%'
+#            - '@app.open_weather'
